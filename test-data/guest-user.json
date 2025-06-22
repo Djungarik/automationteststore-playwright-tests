@@ -1,0 +1,10 @@
+{
+  "firstName": "Guest",
+  "lastName": "User",
+  "email": "guest.user@test.com",
+  "address1": "123 Main St",
+  "city": "Automationtown",
+  "zone": "Aberdeen",
+  "postcode": "12345",
+  "country": "United Kingdom"
+}
