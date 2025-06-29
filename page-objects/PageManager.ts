@@ -5,6 +5,7 @@ import { OrderConfirmationPage } from "./OrderConfirmationPage";
 import { ProductPage } from "./ProductPage";
 import { CheckoutPage } from "./CheckoutPage";
 import { NavigationPage } from "./NavigationPage";
+import { RegisterPage } from "./RegisterPage";
 
 export class PageManager {
   readonly page: Page;
@@ -14,6 +15,8 @@ export class PageManager {
   readonly productPage: ProductPage;
   readonly checkoutPage: CheckoutPage;
   readonly navigationPage: NavigationPage;
+  readonly registerPage: RegisterPage;
+
   constructor(page: Page) {
     this.page = page;
     this.homePage = new HomePage(this.page);
@@ -22,6 +25,7 @@ export class PageManager {
     this.productPage = new ProductPage(this.page);
     this.checkoutPage = new CheckoutPage(this.page);
     this.navigationPage = new NavigationPage(this.page);
+    this.registerPage = new RegisterPage(this.page);
   }
 
   onHomePage() {
@@ -42,6 +46,10 @@ export class PageManager {
 
   onCheckoutPage() {
     return this.checkoutPage;
+  }
+
+  onRegisterPage() {
+    return this.registerPage;
   }
 
   navigateTo() {
