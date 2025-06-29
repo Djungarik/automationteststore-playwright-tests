@@ -19,7 +19,7 @@ export class CheckoutPage {
     address1: string,
     city: string,
     zone: string,
-    postcode: string
+    zipcode: string
   ) {
     await this.page.locator("#guestFrm_firstname").fill(firstName);
     await this.page.locator("#guestFrm_lastname").fill(lastName);
@@ -27,7 +27,7 @@ export class CheckoutPage {
     await this.page.locator("#guestFrm_address_1").fill(address1);
     await this.page.locator("#guestFrm_city").fill(city);
     await this.page.locator("#guestFrm_zone_id").selectOption(zone);
-    await this.page.locator("#guestFrm_postcode").fill(postcode);
+    await this.page.locator("#guestFrm_postcode").fill(zipcode);
     await this.page.getByRole("button", { name: "Continue" }).click();
   }
 
@@ -130,6 +130,7 @@ export class CheckoutPage {
           response.status() === 200
       ),
       this.page.getByRole("button", { name: "Confirm Order" }).click(),
+      this.page.waitForURL("**/index.php?rt=checkout/success"),
     ]);
   }
 }
