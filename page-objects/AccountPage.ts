@@ -31,7 +31,7 @@ export class AccountPage {
   async clickNotificationsTile() {
     await this.page.locator(".nav-dash li").nth(7).click();
   }
-  async clickMLogoffTile() {
+  async clickLogoffTile() {
     await this.page.locator(".nav-dash li").nth(8).click();
   }
 }
