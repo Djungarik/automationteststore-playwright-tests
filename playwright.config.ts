@@ -28,17 +28,20 @@ export default defineConfig({
     {
       name: "chromium",
       use: { ...devices["Desktop Chrome"] },
+      testMatch: /.*guestUser\.spec\.ts/,
     },
 
     {
       name: "firefox",
       use: { ...devices["Desktop Firefox"], storageState: ".auth/user.json" },
       dependencies: ["setup"],
+      testMatch: /.*existingUser\.spec\.ts/,
     },
 
     {
       name: "webkit",
       use: { ...devices["Desktop Safari"] },
+      testMatch: /.*newUser\.spec\.ts/,
     },
   ],
 });

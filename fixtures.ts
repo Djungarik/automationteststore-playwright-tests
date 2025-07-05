@@ -12,4 +12,8 @@ export const test = base.extend<MyFixtures>({
   },
 });
 
+test.beforeEach(async ({ page }) => {
+  await page.goto("/");
+});
+
 export { expect } from "@playwright/test";
