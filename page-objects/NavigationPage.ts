@@ -7,6 +7,108 @@ export class NavigationPage {
     this.page = page;
   }
 
+  //REGISTERED USER MENU
+  async accountDashboard() {
+    await this.page
+      .locator("#customer_menu_top")
+      .getByRole("link", { name: "Welcome back" })
+      .hover();
+    await this.page
+      .locator(".dropdown")
+      .getByRole("link", { name: "Account Dashboard" })
+      .click();
+  }
+  async myWishList() {
+    await this.page
+      .locator("#customer_menu_top")
+      .getByRole("link", { name: "Welcome back" })
+      .hover();
+    await this.page
+      .locator(".dropdown")
+      .getByRole("link", { name: "My wish list" })
+      .click();
+  }
+  async editAccountDetails() {
+    await this.page
+      .locator("#customer_menu_top")
+      .getByRole("link", { name: "Welcome back" })
+      .hover();
+    await this.page
+      .locator(".dropdown")
+      .getByRole("link", { name: "Edit account details" })
+      .click();
+  }
+  async changePassword() {
+    await this.page
+      .locator("#customer_menu_top")
+      .getByRole("link", { name: "Welcome back" })
+      .hover();
+    await this.page
+      .locator(".dropdown")
+      .getByRole("link", { name: "Change password" })
+      .click();
+  }
+  async manageAddressBook() {
+    await this.page
+      .locator("#customer_menu_top")
+      .getByRole("link", { name: "Welcome back" })
+      .hover();
+    await this.page
+      .locator(".dropdown")
+      .getByRole("link", { name: "Manage Address Book" })
+      .click();
+  }
+  async orderHistory() {
+    await this.page
+      .locator("#customer_menu_top")
+      .getByRole("link", { name: "Welcome back" })
+      .hover();
+    await this.page
+      .locator(".dropdown")
+      .getByRole("link", { name: "Order history" })
+      .click();
+  }
+  async transactionHistory() {
+    await this.page
+      .locator("#customer_menu_top")
+      .getByRole("link", { name: "Welcome back" })
+      .hover();
+    await this.page
+      .locator(".dropdown")
+      .getByRole("link", { name: "Transaction history" })
+      .click();
+  }
+  async downloads() {
+    await this.page
+      .locator("#customer_menu_top")
+      .getByRole("link", { name: "Welcome back" })
+      .hover();
+    await this.page
+      .locator(".dropdown")
+      .getByRole("link", { name: "Downloads" })
+      .click();
+  }
+  async notifications() {
+    await this.page
+      .locator("#customer_menu_top")
+      .getByRole("link", { name: "Welcome back" })
+      .hover();
+    await this.page
+      .locator(".dropdown")
+      .getByRole("link", { name: "Notifications" })
+      .click();
+  }
+  async logoff() {
+    await this.page
+      .locator("#customer_menu_top")
+      .getByRole("link", { name: "Welcome back" })
+      .hover();
+    await this.page
+      .locator(".dropdown")
+      .getByRole("link", { name: "Logoff" })
+      .click();
+  }
+
   //TOP NAVBAR
   async loginOrRegister() {
     await this.page
