@@ -6,6 +6,7 @@ import { ProductPage } from "./ProductPage";
 import { CheckoutPage } from "./CheckoutPage";
 import { NavigationPage } from "./NavigationPage";
 import { RegisterPage } from "./RegisterPage";
+import { AccountPage } from "./AccountPage";
 
 export class PageManager {
   readonly page: Page;
@@ -16,6 +17,7 @@ export class PageManager {
   readonly checkoutPage: CheckoutPage;
   readonly navigationPage: NavigationPage;
   readonly registerPage: RegisterPage;
+  readonly accountPage: AccountPage;
 
   constructor(page: Page) {
     this.page = page;
@@ -26,6 +28,7 @@ export class PageManager {
     this.checkoutPage = new CheckoutPage(this.page);
     this.navigationPage = new NavigationPage(this.page);
     this.registerPage = new RegisterPage(this.page);
+    this.accountPage = new AccountPage(this.page);
   }
 
   onHomePage() {
@@ -54,5 +57,9 @@ export class PageManager {
 
   navigateTo() {
     return this.navigationPage;
+  }
+
+  onAccountPage() {
+    return this.accountPage;
   }
 }
