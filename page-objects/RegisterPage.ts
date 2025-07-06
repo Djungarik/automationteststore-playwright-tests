@@ -45,9 +45,9 @@ export class RegisterPage {
     await Promise.all([
       this.page.waitForResponse(
         (response) =>
-          response.url().includes("account") &&
-          response.request().method() === "GET" &&
-          response.status() === 200
+          response.url().includes("create") &&
+          response.request().method() === "POST" &&
+          response.status() === 302
       ),
       this.page.getByRole("button", { name: "Continue" }).click(),
     ]);
