@@ -41,6 +41,15 @@ export class RegisterPage {
     await this.page.locator("#AccountFrm_confirm").fill(password);
     await this.page.locator(`#AccountFrm_newsletter${subscribe}`).click();
     await this.page.locator("#AccountFrm_agree").click();
-    await this.page.getByRole("button", { name: "Continue" }).click();
+
+    await Promise.all([
+      this.page.waitForResponse(
+        (response) =>
+          response.url().includes("account") &&
+          response.request().method() === "GET" &&
+          response.status() === 200
+      ),
+      this.page.getByRole("button", { name: "Continue" }).click(),
+    ]);
   }
 }

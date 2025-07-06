@@ -2,8 +2,7 @@ import { test, expect } from "../fixtures";
 import { PageManager } from "../page-objects/PageManager";
 import newUser from "../test-data/new-user.json";
 
-test("register a new user", async ({ page, helperBase }, testInfo) => {
-  testInfo.setTimeout(40_000);
+test("register a new user", async ({ page, helperBase }) => {
   const pm = new PageManager(page);
 
   await pm.navigateTo().loginOrRegister();
