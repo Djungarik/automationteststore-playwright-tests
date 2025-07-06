@@ -7,6 +7,8 @@ import { CheckoutPage } from "./CheckoutPage";
 import { NavigationPage } from "./NavigationPage";
 import { RegisterPage } from "./RegisterPage";
 import { AccountPage } from "./AccountPage";
+import { ChangePassword } from "./ChangePassword";
+import { AccountLoginPage } from "./AccountLoginPage";
 
 export class PageManager {
   readonly page: Page;
@@ -18,6 +20,8 @@ export class PageManager {
   readonly navigationPage: NavigationPage;
   readonly registerPage: RegisterPage;
   readonly accountPage: AccountPage;
+  readonly changePassword: ChangePassword;
+  readonly accountLoginPage: AccountLoginPage;
 
   constructor(page: Page) {
     this.page = page;
@@ -29,6 +33,8 @@ export class PageManager {
     this.navigationPage = new NavigationPage(this.page);
     this.registerPage = new RegisterPage(this.page);
     this.accountPage = new AccountPage(this.page);
+    this.changePassword = new ChangePassword(this.page);
+    this.accountLoginPage = new AccountLoginPage(this.page);
   }
 
   onHomePage() {
@@ -61,5 +67,13 @@ export class PageManager {
 
   onAccountPage() {
     return this.accountPage;
+  }
+
+  onChangePasswordPage() {
+    return this.changePassword;
+  }
+
+  onAccountLoginOrRegisterPage() {
+    return this.accountLoginPage;
   }
 }
