@@ -19,6 +19,10 @@ jobs:
         run: npm ci --force
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps --force
+      - name: Ensure test-data directory exists
+        run: mkdir -p test-data
+      - name: Create test-user.json from secret
+        run: echo "$TEST_USER_JSON" > test-data/test-user.json
       - name: Run Playwright tests
         run: npx playwright test
       - uses: actions/upload-artifact@v4
