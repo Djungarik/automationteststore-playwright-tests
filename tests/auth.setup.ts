@@ -1,9 +1,8 @@
 import { test as setup } from "@playwright/test";
 import { PageManager } from "../page-objects/PageManager";
-import testUser from "../test-data/test-user.json";
-const authFile = ".auth/user.json";
 
 setup("authenticate", async ({ page }) => {
+  const testUser = require("../test-data/test-user.json");
   await page.goto("/");
 
   const pm = new PageManager(page);
@@ -14,5 +13,5 @@ setup("authenticate", async ({ page }) => {
   await page.locator("#loginFrm_password").fill(testUser.password);
   await page.getByRole("button", { name: "Login" }).click();
 
-  await page.context().storageState({ path: authFile });
+  await page.context().storageState({ path: ".auth/user.json" });
 });
