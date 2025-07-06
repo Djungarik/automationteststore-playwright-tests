@@ -13,6 +13,7 @@
   "country": "United Kingdom",
   "loginName": "Automation",
   "password": "Test1234!",
+  "newPassword": "NewTest1234!",
   "subscribe": {
     "yes": "1",
     "no": "0"
