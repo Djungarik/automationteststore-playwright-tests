@@ -8,6 +8,8 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    env:
+      TEST_USER_JSON: ${{ secrets.TEST_USER_JSON }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
