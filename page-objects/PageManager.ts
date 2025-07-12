@@ -9,6 +9,7 @@ import { RegisterPage } from "./RegisterPage";
 import { AccountPage } from "./AccountPage";
 import { ChangePassword } from "./ChangePassword";
 import { AccountLoginPage } from "./AccountLoginPage";
+import { EditAccountDetails } from "./EditAccountDetails";
 
 export class PageManager {
   readonly page: Page;
@@ -22,6 +23,7 @@ export class PageManager {
   readonly accountPage: AccountPage;
   readonly changePassword: ChangePassword;
   readonly accountLoginPage: AccountLoginPage;
+  readonly editAccountDetails: EditAccountDetails;
 
   constructor(page: Page) {
     this.page = page;
@@ -35,6 +37,7 @@ export class PageManager {
     this.accountPage = new AccountPage(this.page);
     this.changePassword = new ChangePassword(this.page);
     this.accountLoginPage = new AccountLoginPage(this.page);
+    this.editAccountDetails = new EditAccountDetails(this.page);
   }
 
   onHomePage() {
@@ -75,5 +78,9 @@ export class PageManager {
 
   onAccountLoginOrRegisterPage() {
     return this.accountLoginPage;
+  }
+
+  onEditAccountDetailsPage() {
+    return this.editAccountDetails;
   }
 }
