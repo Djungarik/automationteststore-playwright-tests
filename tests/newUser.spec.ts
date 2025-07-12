@@ -2,8 +2,13 @@ import { test, expect } from "../fixtures";
 import { PageManager } from "../page-objects/PageManager";
 import newUser from "../test-data/new-user.json";
 
-test("register a new user", async ({ page, helperBase }, testInfo) => {
-  testInfo.setTimeout(50_000);
+test.beforeEach(async ({ browserName }, testInfo) => {
+  if (browserName === "webkit") {
+    testInfo.slow(browserName == "webkit");
+  }
+});
+
+test("register a new user", async ({ page, helperBase }) => {
   const pm = new PageManager(page);
 
   await pm.navigateTo().loginOrRegister();
@@ -69,8 +74,7 @@ test("register a new user", async ({ page, helperBase }, testInfo) => {
   );
 });
 
-test("user can change the password", async ({ page, helperBase }, testInfo) => {
-  testInfo.setTimeout(40_000);
+test("user can change the password", async ({ page, helperBase }) => {
   const pm = new PageManager(page);
 
   await pm.navigateTo().loginOrRegister();
@@ -135,5 +139,94 @@ test("user can change the password", async ({ page, helperBase }, testInfo) => {
 
   await expect(page.locator(".heading1 .subtext")).toContainText(
     newUser.firstName
+  );
+});
+
+test("user can edit account details", async ({ page, helperBase }) => {
+  const pm = new PageManager(page);
+
+  await pm.navigateTo().loginOrRegister();
+
+  await pm.onAccountLoginOrRegisterPage().startNewCustomerRegistration();
+
+  const todaysDateAndTime = helperBase.getTodaysDateWithCurrentTime();
+
+  const lastName = `${newUser.lastName}-${todaysDateAndTime}`;
+  const baseEmail = newUser.email;
+  const [prefix, domain] = baseEmail.split("@");
+  const email = `${prefix}_${todaysDateAndTime}@${domain}`;
+  const loginName = `${newUser.loginName}${todaysDateAndTime}`;
+
+  await pm
+    .onRegisterPage()
+    .fillRegisterForm(
+      newUser.firstName,
+      lastName,
+      email,
+      newUser.telephone,
+      newUser.fax,
+      newUser.company,
+      newUser.address1,
+      newUser.address2,
+      newUser.city,
+      newUser.country,
+      newUser.zone,
+      newUser.zipcode,
+      loginName,
+      newUser.password,
+      newUser.subscribe.no
+    );
+
+  await expect(page.locator(".maintext")).toContainText(
+    "Your Account Has Been Created!"
+  );
+
+  await page.getByRole("link", { name: "Continue" }).click();
+
+  await pm.onAccountPage().clickEditAccountDetailsTile();
+
+  const newFirstName = `Edit ${newUser.firstName}`;
+  const newLastName = `Edit ${lastName}`;
+  const newEmail = `edit${email}`;
+  const newPhone = "1111111111";
+  const newFax = "2222222";
+
+  await pm
+    .onEditAccountDetailsPage()
+    .fillEditAccountDetailsForm(
+      newFirstName,
+      newLastName,
+      newEmail,
+      newPhone,
+      newFax
+    );
+
+  await expect(page.locator(".alert-success")).toContainText(
+    "Success: Your account has been successfully updated."
+  );
+
+  await expect(page.locator(".heading1 .subtext")).toContainText(newFirstName);
+
+  await pm.onAccountPage().clickEditAccountDetailsTile();
+
+  await expect(page.locator("#AccountFrm_firstname")).toHaveAttribute(
+    "value",
+    newFirstName
+  );
+  await expect(page.locator("#AccountFrm_lastname")).toHaveAttribute(
+    "value",
+    newLastName
+  );
+  await expect(page.locator("#AccountFrm_email")).toHaveAttribute(
+    "value",
+    newEmail
+  );
+  await expect(page.locator("#AccountFrm_telephone")).toHaveAttribute(
+    "value",
+    newPhone
+  );
+  await expect(page.locator("#AccountFrm_fax")).toHaveAttribute(
+    "value",
+    newFax
   );
 });
