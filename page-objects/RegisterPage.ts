@@ -24,6 +24,7 @@ export class RegisterPage {
     password: string,
     subscribe: string
   ) {
+    await this.page.locator("#AccountFrm_country_id").selectOption(country);
     await this.page.locator("#AccountFrm_firstname").fill(firstName);
     await this.page.locator("#AccountFrm_lastname").fill(lastName);
     await this.page.locator("#AccountFrm_email").fill(email);
@@ -32,7 +33,6 @@ export class RegisterPage {
     await this.page.locator("#AccountFrm_company").fill(company);
     await this.page.locator("#AccountFrm_address_1").fill(address1);
     await this.page.locator("#AccountFrm_address_2").fill(address2);
-    await this.page.locator("#AccountFrm_country_id").selectOption(country);
     await this.page.locator("#AccountFrm_city").fill(city);
     await this.page.locator("#AccountFrm_zone_id").selectOption(zone);
     await this.page.locator("#AccountFrm_postcode").fill(zipcode);

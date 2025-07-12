@@ -21,7 +21,7 @@ test("register a new user", async ({ page, helperBase }) => {
   const baseEmail = newUser.email;
   const [prefix, domain] = baseEmail.split("@");
   const email = `${prefix}_${todaysDateAndTime}@${domain}`;
-  const loginName = `${newUser.loginName}${todaysDateAndTime}`;
+  const loginName = `New${newUser.loginName}${todaysDateAndTime}`;
 
   await pm
     .onRegisterPage()
@@ -83,11 +83,11 @@ test("user can change the password", async ({ page, helperBase }) => {
 
   const todaysDateAndTime = helperBase.getTodaysDateWithCurrentTime();
 
-  const lastName = `ChangePassword-${newUser.lastName}-${todaysDateAndTime}`;
+  const lastName = `${newUser.lastName}-${todaysDateAndTime}`;
   const baseEmail = newUser.email;
   const [prefix, domain] = baseEmail.split("@");
-  const email = `${prefix}_${todaysDateAndTime}@${domain}`;
-  const loginName = `${newUser.loginName}${todaysDateAndTime}`;
+  const email = `chpass${prefix}_${todaysDateAndTime}@${domain}`;
+  const loginName = `ChPass${newUser.loginName}${todaysDateAndTime}`;
 
   await pm
     .onRegisterPage()
@@ -154,8 +154,8 @@ test("user can edit account details", async ({ page, helperBase }) => {
   const lastName = `${newUser.lastName}-${todaysDateAndTime}`;
   const baseEmail = newUser.email;
   const [prefix, domain] = baseEmail.split("@");
-  const email = `${prefix}_${todaysDateAndTime}@${domain}`;
-  const loginName = `${newUser.loginName}${todaysDateAndTime}`;
+  const email = `editdetails${prefix}_${todaysDateAndTime}@${domain}`;
+  const loginName = `EditDet${newUser.loginName}${todaysDateAndTime}`;
 
   await pm
     .onRegisterPage()
