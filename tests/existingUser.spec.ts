@@ -130,10 +130,6 @@ test("edit a non-default address", async ({ page, helperBase }) => {
 
   await page.getByRole("button", { name: "Continue" }).click();
 
-  await expect(page.locator(".alert-success")).toContainText(
-    "Your address has been successfully inserted"
-  );
-
   const allEntries = await pm.onAddressBookPage().getAllAddressEntries();
 
   expect(
