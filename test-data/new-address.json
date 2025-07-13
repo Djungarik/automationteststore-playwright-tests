@@ -1,0 +1,32 @@
+{
+  "newAddress": {
+    "firstName": "New",
+    "lastName": "Address",
+    "company": "QA",
+    "address1": "321 Side St",
+    "address2": "N200",
+    "city": "Automationcity",
+    "zone": "Berkshire",
+    "zipcode": "54321",
+    "country": "United Kingdom",
+    "defaultAddress": {
+      "yes": "1",
+      "no": "0"
+    }
+  },
+  "updatedAddress": {
+    "firstName": "New",
+    "lastName": "Address",
+    "company": "QA",
+    "address1": "123 Main St",
+    "address2": "N300",
+    "city": "QAcity",
+    "zone": "Aberdeen",
+    "zipcode": "1234",
+    "country": "United Kingdom",
+    "defaultAddress": {
+      "yes": "1",
+      "no": "0"
+    }
+  }
+}

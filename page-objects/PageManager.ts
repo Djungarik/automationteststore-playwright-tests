@@ -7,9 +7,10 @@ import { CheckoutPage } from "./CheckoutPage";
 import { NavigationPage } from "./NavigationPage";
 import { RegisterPage } from "./RegisterPage";
 import { AccountPage } from "./AccountPage";
-import { ChangePassword } from "./ChangePassword";
+import { ChangePasswordPage } from "./ChangePasswordPage";
 import { AccountLoginPage } from "./AccountLoginPage";
-import { EditAccountDetails } from "./EditAccountDetails";
+import { EditAccountDetailsPage } from "./EditAccountDetailsPage";
+import { AddressBookPage } from "./AddressBookPage";
 
 export class PageManager {
   readonly page: Page;
@@ -21,9 +22,10 @@ export class PageManager {
   readonly navigationPage: NavigationPage;
   readonly registerPage: RegisterPage;
   readonly accountPage: AccountPage;
-  readonly changePassword: ChangePassword;
+  readonly changePasswordPage: ChangePasswordPage;
   readonly accountLoginPage: AccountLoginPage;
-  readonly editAccountDetails: EditAccountDetails;
+  readonly editAccountDetailsPage: EditAccountDetailsPage;
+  readonly addressBookPage: AddressBookPage;
 
   constructor(page: Page) {
     this.page = page;
@@ -35,9 +37,10 @@ export class PageManager {
     this.navigationPage = new NavigationPage(this.page);
     this.registerPage = new RegisterPage(this.page);
     this.accountPage = new AccountPage(this.page);
-    this.changePassword = new ChangePassword(this.page);
+    this.changePasswordPage = new ChangePasswordPage(this.page);
     this.accountLoginPage = new AccountLoginPage(this.page);
-    this.editAccountDetails = new EditAccountDetails(this.page);
+    this.editAccountDetailsPage = new EditAccountDetailsPage(this.page);
+    this.addressBookPage = new AddressBookPage(this.page);
   }
 
   onHomePage() {
@@ -73,7 +76,7 @@ export class PageManager {
   }
 
   onChangePasswordPage() {
-    return this.changePassword;
+    return this.changePasswordPage;
   }
 
   onAccountLoginOrRegisterPage() {
@@ -81,6 +84,10 @@ export class PageManager {
   }
 
   onEditAccountDetailsPage() {
-    return this.editAccountDetails;
+    return this.editAccountDetailsPage;
+  }
+
+  onAddressBookPage() {
+    return this.addressBookPage;
   }
 }

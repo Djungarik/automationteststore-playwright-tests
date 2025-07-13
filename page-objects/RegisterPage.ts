@@ -43,8 +43,8 @@ export class RegisterPage {
     await this.page.locator("#AccountFrm_agree").click();
 
     await Promise.all([
-      this.page.waitForURL("**/success"),
       this.page.getByRole("button", { name: "Continue" }).click(),
+      this.page.waitForURL("**/success"),
     ]);
   }
 }

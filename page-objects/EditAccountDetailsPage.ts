@@ -1,6 +1,6 @@
 import { Page } from "@playwright/test";
 
-export class EditAccountDetails {
+export class EditAccountDetailsPage {
   readonly page: Page;
 
   constructor(page: Page) {
