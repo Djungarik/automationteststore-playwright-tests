@@ -102,7 +102,7 @@ test("add a new non-default address", async ({ page, helperBase }) => {
     )
   ).toBe(true);
 });
-test.only("add a new default address", async ({ page, helperBase }) => {
+test("add a new default address", async ({ page, helperBase }) => {
   const pm = new PageManager(page);
 
   const todaysDateAndTime = helperBase.getTodaysDateWithCurrentTime();
@@ -216,6 +216,80 @@ test("edit a non-default address", async ({ page, helperBase }) => {
       address.updatedAddress.zone,
       address.updatedAddress.zipcode,
       address.updatedAddress.defaultAddress.no
+    );
+
+  await page.getByRole("button", { name: "Continue" }).click();
+
+  await expect(page.locator(".alert-success")).toContainText(
+    "Your address has been successfully updated"
+  );
+
+  const updatedEntries = await pm.onAddressBookPage().getAllAddressEntries();
+
+  expect(
+    updatedEntries.some((entry) =>
+      entry.includes(
+        `${address.updatedAddress.firstName} ${updatedLastName} ${address.updatedAddress.company} ${address.updatedAddress.address1} ${address.updatedAddress.address2} ${address.updatedAddress.city} ${address.updatedAddress.zipcode} ${address.updatedAddress.zone} ${address.updatedAddress.country}`
+      )
+    )
+  ).toBe(true);
+});
+test.only("edit a default address", async ({ page, helperBase }) => {
+  const pm = new PageManager(page);
+
+  const todaysDateAndTime = helperBase.getTodaysDateWithCurrentTime();
+  const lastName = `${address.newAddress.lastName}-${todaysDateAndTime}`;
+
+  await pm.navigateTo().manageAddressBook();
+
+  await page.getByRole("link", { name: "New Address" }).click();
+
+  await pm
+    .onAddressBookPage()
+    .fillAddressForm(
+      address.newAddress.firstName,
+      lastName,
+      address.newAddress.company,
+      address.newAddress.address1,
+      address.newAddress.address2,
+      address.newAddress.city,
+      address.newAddress.country,
+      address.newAddress.zone,
+      address.newAddress.zipcode,
+      address.newAddress.defaultAddress.yes
+    );
+
+  await page.getByRole("button", { name: "Continue" }).click();
+
+  const allEntries = await pm.onAddressBookPage().getAllAddressEntries();
+
+  expect(
+    allEntries.some((entry) =>
+      entry.includes(
+        `${address.newAddress.firstName} ${lastName} ${address.newAddress.company} ${address.newAddress.address1} ${address.newAddress.address2} ${address.newAddress.city} ${address.newAddress.zipcode} ${address.newAddress.zone} ${address.newAddress.country}`
+      )
+    )
+  ).toBe(true);
+
+  await pm.onAddressBookPage().clickEditLastAddressEntry();
+
+  await pm.onAddressBookPage().clearAddressForm();
+
+  const updatedLastName = `UpdDefault${address.updatedAddress.lastName}-${todaysDateAndTime}`;
+
+  await pm
+    .onAddressBookPage()
+    .fillAddressForm(
+      address.newAddress.firstName,
+      updatedLastName,
+      address.updatedAddress.company,
+      address.updatedAddress.address1,
+      address.updatedAddress.address2,
+      address.updatedAddress.city,
+      address.updatedAddress.country,
+      address.updatedAddress.zone,
+      address.updatedAddress.zipcode,
+      address.updatedAddress.defaultAddress.yes
     );
 
   await page.getByRole("button", { name: "Continue" }).click();
