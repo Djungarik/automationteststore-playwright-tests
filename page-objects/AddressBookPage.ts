@@ -62,4 +62,14 @@ export class AddressBookPage {
       .getByRole("button", { name: "edit" })
       .click();
   }
+
+  async clickDeleteLastAddressEntry() {
+    await this.page
+      .locator(".genericbox")
+      .last()
+      .locator("tbody tr td")
+      .nth(1)
+      .getByRole("button", { name: "delete" })
+      .click();
+  }
 }
