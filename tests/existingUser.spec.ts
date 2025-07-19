@@ -102,6 +102,63 @@ test("add a new non-default address", async ({ page, helperBase }) => {
     )
   ).toBe(true);
 });
+test.only("add a new default address", async ({ page, helperBase }) => {
+  const pm = new PageManager(page);
+
+  const todaysDateAndTime = helperBase.getTodaysDateWithCurrentTime();
+  const lastName = `${address.newAddress.lastName}-${todaysDateAndTime}`;
+
+  await pm.navigateTo().manageAddressBook();
+
+  await page.getByRole("link", { name: "New Address" }).click();
+
+  await pm
+    .onAddressBookPage()
+    .fillAddressForm(
+      address.newAddress.firstName,
+      lastName,
+      address.newAddress.company,
+      address.newAddress.address1,
+      address.newAddress.address2,
+      address.newAddress.city,
+      address.newAddress.country,
+      address.newAddress.zone,
+      address.newAddress.zipcode,
+      address.newAddress.defaultAddress.yes
+    );
+  await page.getByRole("button", { name: "Continue" }).click();
+  await expect(page.locator(".alert-success")).toContainText(
+    "Your address has been successfully inserted"
+  );
+
+  const allEntries = await pm.onAddressBookPage().getAllAddressEntries();
+
+  expect(
+    allEntries.some((entry) =>
+      entry.includes(
+        `${address.newAddress.firstName} ${lastName} ${address.newAddress.company} ${address.newAddress.address1} ${address.newAddress.address2} ${address.newAddress.city} ${address.newAddress.zipcode} ${address.newAddress.zone} ${address.newAddress.country}`
+      )
+    )
+  ).toBe(true);
+
+  const index = allEntries.findIndex((entry) =>
+    entry.includes(
+      `${address.newAddress.firstName} ${lastName} ${address.newAddress.company} ${address.newAddress.address1} ${address.newAddress.address2} ${address.newAddress.city} ${address.newAddress.zipcode} ${address.newAddress.zone} ${address.newAddress.country}`
+    )
+  );
+
+  const defaultAddressEntry = page
+    .locator(".genericbox tbody tr td:first-child")
+    .nth(index);
+
+  await expect(
+    defaultAddressEntry
+      .locator("..")
+      .locator("td")
+      .nth(1)
+      .getByRole("button", { name: "delete" })
+  ).not.toBeAttached();
+});
 
 test("edit a non-default address", async ({ page, helperBase }) => {
   const pm = new PageManager(page);
@@ -177,7 +234,7 @@ test("edit a non-default address", async ({ page, helperBase }) => {
     )
   ).toBe(true);
 });
-test.only("delete a non-default address", async ({ page, helperBase }) => {
+test("delete a non-default address", async ({ page, helperBase }) => {
   const pm = new PageManager(page);
 
   const todaysDateAndTime = helperBase.getTodaysDateWithCurrentTime();
