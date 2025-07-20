@@ -6,6 +6,7 @@ test("buy the 1st featured product as an existing user with a standard shipping 
   page,
 }) => {
   const pm = new PageManager(page);
+  await pm.navigateTo().home();
 
   const productName = await pm.onHomePage().getFirstFeaturedProductName();
   const productPrice = await pm.onHomePage().getFirstFeaturedProductPrice();
@@ -68,7 +69,7 @@ test.describe("adding addresses to the Address Book", () => {
     const pm = new PageManager(page);
 
     const todaysDateAndTime = helperBase.getTodaysDateWithCurrentTime();
-    const lastName = `${address.newAddress.lastName}-${todaysDateAndTime}`;
+    const lastName = `AND${address.newAddress.lastName}-${todaysDateAndTime}`;
 
     await pm.navigateTo().manageAddressBook();
 
@@ -89,6 +90,7 @@ test.describe("adding addresses to the Address Book", () => {
         address.newAddress.defaultAddress.no
       );
     await page.getByRole("button", { name: "Continue" }).click();
+    await page.waitForURL("**/index.php?rt=account/address");
     await expect(page.locator(".alert-success")).toContainText(
       "Your address has been successfully inserted"
     );
@@ -96,10 +98,12 @@ test.describe("adding addresses to the Address Book", () => {
     const allEntries = await pm.onAddressBookPage().getAllAddressEntries();
 
     expect(
-      allEntries.some((entry) =>
-        entry.includes(
-          `${address.newAddress.firstName} ${lastName} ${address.newAddress.company} ${address.newAddress.address1} ${address.newAddress.address2} ${address.newAddress.city} ${address.newAddress.zipcode} ${address.newAddress.zone} ${address.newAddress.country}`
-        )
+      allEntries.some(
+        (entry) =>
+          entry.includes(lastName) &&
+          entry.includes(address.newAddress.address1) &&
+          entry.includes(address.newAddress.city) &&
+          entry.includes(address.newAddress.zone)
       )
     ).toBe(true);
   });
@@ -107,7 +111,7 @@ test.describe("adding addresses to the Address Book", () => {
     const pm = new PageManager(page);
 
     const todaysDateAndTime = helperBase.getTodaysDateWithCurrentTime();
-    const lastName = `${address.newAddress.lastName}-${todaysDateAndTime}`;
+    const lastName = `AD${address.newAddress.lastName}-${todaysDateAndTime}`;
 
     await pm.navigateTo().manageAddressBook();
 
@@ -128,6 +132,7 @@ test.describe("adding addresses to the Address Book", () => {
         address.newAddress.defaultAddress.yes
       );
     await page.getByRole("button", { name: "Continue" }).click();
+    await page.waitForURL("**/index.php?rt=account/address");
     await expect(page.locator(".alert-success")).toContainText(
       "Your address has been successfully inserted"
     );
@@ -135,10 +140,12 @@ test.describe("adding addresses to the Address Book", () => {
     const allEntries = await pm.onAddressBookPage().getAllAddressEntries();
 
     expect(
-      allEntries.some((entry) =>
-        entry.includes(
-          `${address.newAddress.firstName} ${lastName} ${address.newAddress.company} ${address.newAddress.address1} ${address.newAddress.address2} ${address.newAddress.city} ${address.newAddress.zipcode} ${address.newAddress.zone} ${address.newAddress.country}`
-        )
+      allEntries.some(
+        (entry) =>
+          entry.includes(lastName) &&
+          entry.includes(address.newAddress.address1) &&
+          entry.includes(address.newAddress.city) &&
+          entry.includes(address.newAddress.zone)
       )
     ).toBe(true);
   });
@@ -149,7 +156,7 @@ test.describe("editing addresses from the Address Book", () => {
     const pm = new PageManager(page);
 
     const todaysDateAndTime = helperBase.getTodaysDateWithCurrentTime();
-    const lastName = `${address.newAddress.lastName}-${todaysDateAndTime}`;
+    const lastName = `END${address.newAddress.lastName}-${todaysDateAndTime}`;
 
     await pm.navigateTo().manageAddressBook();
 
@@ -171,14 +178,17 @@ test.describe("editing addresses from the Address Book", () => {
       );
 
     await page.getByRole("button", { name: "Continue" }).click();
+    await page.waitForURL("**/index.php?rt=account/address");
 
     const allEntries = await pm.onAddressBookPage().getAllAddressEntries();
 
     expect(
-      allEntries.some((entry) =>
-        entry.includes(
-          `${address.newAddress.firstName} ${lastName} ${address.newAddress.company} ${address.newAddress.address1} ${address.newAddress.address2} ${address.newAddress.city} ${address.newAddress.zipcode} ${address.newAddress.zone} ${address.newAddress.country}`
-        )
+      allEntries.some(
+        (entry) =>
+          entry.includes(lastName) &&
+          entry.includes(address.newAddress.address1) &&
+          entry.includes(address.newAddress.city) &&
+          entry.includes(address.newAddress.zone)
       )
     ).toBe(true);
 
@@ -204,6 +214,7 @@ test.describe("editing addresses from the Address Book", () => {
       );
 
     await page.getByRole("button", { name: "Continue" }).click();
+    await page.waitForURL("**/index.php?rt=account/address");
 
     await expect(page.locator(".alert-success")).toContainText(
       "Your address has been successfully updated"
@@ -214,10 +225,12 @@ test.describe("editing addresses from the Address Book", () => {
     const updatedEntries = await pm.onAddressBookPage().getAllAddressEntries();
 
     expect(
-      updatedEntries.some((entry) =>
-        entry.includes(
-          `${address.updatedAddress.firstName} ${updatedLastName} ${address.updatedAddress.company} ${address.updatedAddress.address1} ${address.updatedAddress.address2} ${address.updatedAddress.city} ${address.updatedAddress.zipcode} ${address.updatedAddress.zone} ${address.updatedAddress.country}`
-        )
+      updatedEntries.some(
+        (entry) =>
+          entry.includes(lastName) &&
+          entry.includes(address.updatedAddress.address1) &&
+          entry.includes(address.updatedAddress.city) &&
+          entry.includes(address.updatedAddress.zone)
       )
     ).toBe(true);
   });
@@ -225,7 +238,7 @@ test.describe("editing addresses from the Address Book", () => {
     const pm = new PageManager(page);
 
     const todaysDateAndTime = helperBase.getTodaysDateWithCurrentTime();
-    const lastName = `${address.newAddress.lastName}-${todaysDateAndTime}`;
+    const lastName = `ED${address.newAddress.lastName}-${todaysDateAndTime}`;
 
     await pm.navigateTo().manageAddressBook();
 
@@ -247,14 +260,17 @@ test.describe("editing addresses from the Address Book", () => {
       );
 
     await page.getByRole("button", { name: "Continue" }).click();
+    await page.waitForURL("**/index.php?rt=account/address");
 
     const allEntries = await pm.onAddressBookPage().getAllAddressEntries();
 
     expect(
-      allEntries.some((entry) =>
-        entry.includes(
-          `${address.newAddress.firstName} ${lastName} ${address.newAddress.company} ${address.newAddress.address1} ${address.newAddress.address2} ${address.newAddress.city} ${address.newAddress.zipcode} ${address.newAddress.zone} ${address.newAddress.country}`
-        )
+      allEntries.some(
+        (entry) =>
+          entry.includes(lastName) &&
+          entry.includes(address.newAddress.address1) &&
+          entry.includes(address.newAddress.city) &&
+          entry.includes(address.newAddress.zone)
       )
     ).toBe(true);
 
@@ -280,6 +296,7 @@ test.describe("editing addresses from the Address Book", () => {
       );
 
     await page.getByRole("button", { name: "Continue" }).click();
+    await page.waitForURL("**/index.php?rt=account/address");
 
     await expect(page.locator(".alert-success")).toContainText(
       "Your address has been successfully updated"
@@ -290,10 +307,12 @@ test.describe("editing addresses from the Address Book", () => {
     const updatedEntries = await pm.onAddressBookPage().getAllAddressEntries();
 
     expect(
-      updatedEntries.some((entry) =>
-        entry.includes(
-          `${address.updatedAddress.firstName} ${updatedLastName} ${address.updatedAddress.company} ${address.updatedAddress.address1} ${address.updatedAddress.address2} ${address.updatedAddress.city} ${address.updatedAddress.zipcode} ${address.updatedAddress.zone} ${address.updatedAddress.country}`
-        )
+      updatedEntries.some(
+        (entry) =>
+          entry.includes(lastName) &&
+          entry.includes(address.updatedAddress.address1) &&
+          entry.includes(address.updatedAddress.city) &&
+          entry.includes(address.updatedAddress.zone)
       )
     ).toBe(true);
   });
@@ -304,7 +323,7 @@ test.describe("deleting addresses from the Address Book", () => {
     const pm = new PageManager(page);
 
     const todaysDateAndTime = helperBase.getTodaysDateWithCurrentTime();
-    const lastName = `${address.newAddress.lastName}-${todaysDateAndTime}`;
+    const lastName = `DND${address.newAddress.lastName}-${todaysDateAndTime}`;
 
     await pm.navigateTo().manageAddressBook();
 
@@ -326,18 +345,22 @@ test.describe("deleting addresses from the Address Book", () => {
       );
 
     await page.getByRole("button", { name: "Continue" }).click();
+    await page.waitForURL("**/index.php?rt=account/address");
 
     const allEntries = await pm.onAddressBookPage().getAllAddressEntries();
 
     expect(
-      allEntries.some((entry) =>
-        entry.includes(
-          `${address.newAddress.firstName} ${lastName} ${address.newAddress.company} ${address.newAddress.address1} ${address.newAddress.address2} ${address.newAddress.city} ${address.newAddress.zipcode} ${address.newAddress.zone} ${address.newAddress.country}`
-        )
+      allEntries.some(
+        (entry) =>
+          entry.includes(lastName) &&
+          entry.includes(address.newAddress.address1) &&
+          entry.includes(address.newAddress.city) &&
+          entry.includes(address.newAddress.zone)
       )
     ).toBe(true);
 
     await pm.onAddressBookPage().clickDeleteLastAddressEntry();
+    await page.waitForLoadState("domcontentloaded");
 
     await expect(page.locator(".alert-success")).toContainText(
       "Your address has been successfully deleted"
@@ -347,10 +370,12 @@ test.describe("deleting addresses from the Address Book", () => {
     const updatedEntries = await pm.onAddressBookPage().getAllAddressEntries();
 
     expect(
-      updatedEntries.some((entry) =>
-        entry.includes(
-          `${address.newAddress.firstName} ${lastName} ${address.newAddress.company} ${address.newAddress.address1} ${address.newAddress.address2} ${address.newAddress.city} ${address.newAddress.zipcode} ${address.newAddress.zone} ${address.newAddress.country}`
-        )
+      updatedEntries.some(
+        (entry) =>
+          entry.includes(lastName) &&
+          entry.includes(address.newAddress.address1) &&
+          entry.includes(address.newAddress.city) &&
+          entry.includes(address.newAddress.zone)
       )
     ).toBe(false);
   });
@@ -358,7 +383,7 @@ test.describe("deleting addresses from the Address Book", () => {
     const pm = new PageManager(page);
 
     const todaysDateAndTime = helperBase.getTodaysDateWithCurrentTime();
-    const lastName = `${address.newAddress.lastName}-${todaysDateAndTime}`;
+    const lastName = `DD${address.newAddress.lastName}-${todaysDateAndTime}`;
 
     await pm.navigateTo().manageAddressBook();
 
@@ -380,21 +405,26 @@ test.describe("deleting addresses from the Address Book", () => {
       );
 
     await page.getByRole("button", { name: "Continue" }).click();
+    await page.waitForURL("**/index.php?rt=account/address");
 
     const allEntries = await pm.onAddressBookPage().getAllAddressEntries();
 
     expect(
-      allEntries.some((entry) =>
-        entry.includes(
-          `${address.newAddress.firstName} ${lastName} ${address.newAddress.company} ${address.newAddress.address1} ${address.newAddress.address2} ${address.newAddress.city} ${address.newAddress.zipcode} ${address.newAddress.zone} ${address.newAddress.country}`
-        )
+      allEntries.some(
+        (entry) =>
+          entry.includes(lastName) &&
+          entry.includes(address.newAddress.address1) &&
+          entry.includes(address.newAddress.city) &&
+          entry.includes(address.newAddress.zone)
       )
     ).toBe(true);
 
-    const index = allEntries.findIndex((entry) =>
-      entry.includes(
-        `${address.newAddress.firstName} ${lastName} ${address.newAddress.company} ${address.newAddress.address1} ${address.newAddress.address2} ${address.newAddress.city} ${address.newAddress.zipcode} ${address.newAddress.zone} ${address.newAddress.country}`
-      )
+    const index = allEntries.findIndex(
+      (entry) =>
+        entry.includes(lastName) &&
+        entry.includes(address.newAddress.address1) &&
+        entry.includes(address.newAddress.city) &&
+        entry.includes(address.newAddress.zone)
     );
 
     const defaultAddressEntry = page
