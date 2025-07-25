@@ -35,4 +35,9 @@ export class ProductPage {
   async addToCart() {
     await this.page.getByRole("link", { name: "Add to Cart" }).click();
   }
+
+  async setProductQuantity(value: string) {
+    await this.page.locator("#product_quantity").clear();
+    await this.page.locator("#product_quantity").fill(value);
+  }
 }

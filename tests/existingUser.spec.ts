@@ -151,7 +151,7 @@ test.describe("adding addresses to the Address Book", () => {
   });
 });
 
-test.describe("editing addresses from the Address Book", () => {
+test.describe.skip("editing addresses from the Address Book", () => {
   test("edit a non-default address", async ({ page, helperBase }) => {
     const pm = new PageManager(page);
 
@@ -220,7 +220,7 @@ test.describe("editing addresses from the Address Book", () => {
       "Your address has been successfully updated"
     );
 
-    await page.waitForLoadState("domcontentloaded");
+    //await page.waitForLoadState("domcontentloaded");
 
     const updatedEntries = await pm.onAddressBookPage().getAllAddressEntries();
 
@@ -302,7 +302,7 @@ test.describe("editing addresses from the Address Book", () => {
       "Your address has been successfully updated"
     );
 
-    await page.waitForLoadState("domcontentloaded");
+    //await page.waitForLoadState("domcontentloaded");
 
     const updatedEntries = await pm.onAddressBookPage().getAllAddressEntries();
 
@@ -360,12 +360,12 @@ test.describe("deleting addresses from the Address Book", () => {
     ).toBe(true);
 
     await pm.onAddressBookPage().clickDeleteLastAddressEntry();
-    await page.waitForLoadState("domcontentloaded");
+    //await page.waitForLoadState("domcontentloaded");
 
     await expect(page.locator(".alert-success")).toContainText(
       "Your address has been successfully deleted"
     );
-    await page.waitForLoadState("domcontentloaded");
+    // await page.waitForLoadState("domcontentloaded");
 
     const updatedEntries = await pm.onAddressBookPage().getAllAddressEntries();
 

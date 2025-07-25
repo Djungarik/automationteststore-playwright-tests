@@ -230,3 +230,111 @@ test("user can edit account details", async ({ page, helperBase }) => {
     newFax
   );
 });
+
+test("buy 2 t-shirts as a new user with a standard shipping", async ({
+  page,
+  helperBase,
+}) => {
+  const pm = new PageManager(page);
+
+  await pm.navigateTo().loginOrRegister();
+
+  await pm.onAccountLoginOrRegisterPage().startNewCustomerRegistration();
+
+  const todaysDateAndTime = helperBase.getTodaysDateWithCurrentTime();
+
+  const lastName = `${newUser.lastName}-${todaysDateAndTime}`;
+  const baseEmail = newUser.email;
+  const [prefix, domain] = baseEmail.split("@");
+  const email = `${prefix}_${todaysDateAndTime}@${domain}`;
+  const loginName = `${newUser.loginName}${todaysDateAndTime}`;
+
+  await pm
+    .onRegisterPage()
+    .fillRegisterForm(
+      newUser.firstName,
+      lastName,
+      email,
+      newUser.telephone,
+      newUser.fax,
+      newUser.company,
+      newUser.address1,
+      newUser.address2,
+      newUser.city,
+      newUser.country,
+      newUser.zone,
+      newUser.zipcode,
+      loginName,
+      newUser.password,
+      newUser.subscribe.no
+    );
+
+  await expect(page.locator(".maintext")).toContainText(
+    "Your Account Has Been Created!"
+  );
+
+  await page.getByRole("link", { name: "Continue" }).click();
+
+  await pm.navigateTo().apparelAndAccessoriesTShirts();
+
+  await page
+    .getByRole("link", {
+      name: "Designer Men Casual Formal Double Cuffs Grandad Band Collar Shirt Elegant Tie",
+    })
+    .click();
+
+  const productPrice = await pm.onProductPage().getProductPrice();
+
+  await pm.onProductPage().setProductQuantity("2");
+
+  const productName = await pm.onProductPage().getProductName();
+  const productQuantity = 2;
+  const cleanPrice = productPrice?.replace(/[^0-9.]/g, "") || "0";
+  const totalPrice = Number(productQuantity) * Number(cleanPrice);
+
+  expect(totalPrice).toEqual(Number(cleanPrice) * 2);
+
+  await pm.onProductPage().addToCart();
+
+  expect(await pm.onCartPage().getProductName()).toContain(productName);
+  expect(await pm.onCartPage().getProductPrice()).toContain(
+    String(productPrice).trim()
+  );
+  expect(await pm.onCartPage().getProductQuantity()).toEqual(
+    String(productQuantity)
+  );
+  expect(await pm.onCartPage().getProductTotal()).toContain(`$${totalPrice}`);
+
+  const shippingPrice = await pm.onCartPage().getShippingPrice();
+
+  expect(await pm.onCartPage().getTotalsTableValue(0)).toContain(
+    `$${totalPrice}`
+  );
+  expect(await pm.onCartPage().getTotalsTableValue(1)).toContain(shippingPrice);
+
+  const totalPriceWithShipping = totalPrice + Number(shippingPrice);
+
+  expect(await pm.onCartPage().getTotalsTableValue(2)).toContain(
+    `$${totalPriceWithShipping}`
+  );
+
+  await pm.onCartPage().proceedToCheckout();
+
+  const orderSummary = await pm.onCheckoutPage().getOrderSummary();
+
+  expect(orderSummary.productName).toContain(productName);
+  expect(orderSummary.productPrice).toContain(String(productPrice).trim());
+  expect(orderSummary.quantity).toContain(String(productQuantity));
+
+  const totalDetails = await pm.onCheckoutPage().getTotalDetails();
+
+  expect(totalDetails.subtotal).toContain(`$${totalPrice}`);
+  expect(totalDetails.shipping).toContain(shippingPrice);
+  expect(totalDetails.total).toContain(`$${totalPriceWithShipping}`);
+
+  await pm.onCheckoutPage().confirmOrder();
+
+  expect(await pm.onOrderConfirmationPage().getConfirmationMessage()).toContain(
+    "Your Order Has Been Processed!"
+  );
+});
