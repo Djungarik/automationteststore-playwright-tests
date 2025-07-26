@@ -6,5 +6,6 @@
   "city": "Automationtown",
   "zone": "Aberdeen",
   "zipcode": "12345",
-  "country": "United Kingdom"
+  "country": "United Kingdom",
+  "enquiry": "Test123!"
 }

@@ -11,6 +11,7 @@ import { ChangePasswordPage } from "./ChangePasswordPage";
 import { AccountLoginPage } from "./AccountLoginPage";
 import { EditAccountDetailsPage } from "./EditAccountDetailsPage";
 import { AddressBookPage } from "./AddressBookPage";
+import { ContactUsPage } from "./ContactUsPage";
 
 export class PageManager {
   readonly page: Page;
@@ -26,6 +27,7 @@ export class PageManager {
   readonly accountLoginPage: AccountLoginPage;
   readonly editAccountDetailsPage: EditAccountDetailsPage;
   readonly addressBookPage: AddressBookPage;
+  readonly contactUsPage: ContactUsPage;
 
   constructor(page: Page) {
     this.page = page;
@@ -41,6 +43,7 @@ export class PageManager {
     this.accountLoginPage = new AccountLoginPage(this.page);
     this.editAccountDetailsPage = new EditAccountDetailsPage(this.page);
     this.addressBookPage = new AddressBookPage(this.page);
+    this.contactUsPage = new ContactUsPage(this.page);
   }
 
   onHomePage() {
@@ -89,5 +92,9 @@ export class PageManager {
 
   onAddressBookPage() {
     return this.addressBookPage;
+  }
+
+  onContactUsPage() {
+    return this.contactUsPage;
   }
 }

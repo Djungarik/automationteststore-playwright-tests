@@ -14,4 +14,12 @@ export class HelperBase {
 
     return todaysDateAndTime;
   }
+
+  getEmailWithTodaysDateAndTime(baseEmail: string) {
+    const todaysDateAndTime = this.getTodaysDateWithCurrentTime();
+    const [prefix, domain] = baseEmail.split("@");
+    const email = `${todaysDateAndTime}_${prefix}@${domain}`;
+
+    return email;
+  }
 }

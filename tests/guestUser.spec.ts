@@ -139,3 +139,33 @@ test("verify the footer links' content", async ({ page }) => {
     footerLinksContent.contactUs.phone
   );
 });
+
+test("submit the contact us form", async ({ page, helperBase }) => {
+  const pm = new PageManager(page);
+
+  await pm.navigateTo().contactUs();
+
+  await page.getByRole("button", { name: "Submit" }).click();
+
+  await expect(page.locator("#field_11 .element_error.has-error")).toHaveText(
+    "First name: is required field! Name must be between 3 and 32 characters!"
+  );
+  await expect(page.locator("#field_12 .element_error.has-error")).toHaveText(
+    "Email: is required field! E-Mail Address does not appear to be valid!"
+  );
+  await expect(page.locator("#field_13 .element_error.has-error")).toHaveText(
+    "Enquiry: is required field! Enquiry must be between 10 and 3000 characters!"
+  );
+
+  const firstName = guestUser.firstName;
+  const email = helperBase.getEmailWithTodaysDateAndTime(guestUser.email);
+  const enquiry = guestUser.enquiry;
+
+  await pm
+    .onContactUsPage()
+    .fillAndSubmitContactUsForm(firstName, email, enquiry);
+
+  await expect(page.locator(".mb40 p").nth(1)).toHaveText(
+    "Your enquiry has been successfully sent to the store owner!"
+  );
+});
