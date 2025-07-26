@@ -18,9 +18,7 @@ test("register a new user", async ({ page, helperBase }) => {
   const todaysDateAndTime = helperBase.getTodaysDateWithCurrentTime();
 
   const lastName = `${newUser.lastName}-${todaysDateAndTime}`;
-  const baseEmail = newUser.email;
-  const [prefix, domain] = baseEmail.split("@");
-  const email = `${prefix}_${todaysDateAndTime}@${domain}`;
+  const email = helperBase.getEmailWithTodaysDateAndTime(newUser.email);
   const loginName = `New${newUser.loginName}${todaysDateAndTime}`;
 
   await pm
@@ -84,9 +82,7 @@ test("user can change the password", async ({ page, helperBase }) => {
   const todaysDateAndTime = helperBase.getTodaysDateWithCurrentTime();
 
   const lastName = `${newUser.lastName}-${todaysDateAndTime}`;
-  const baseEmail = newUser.email;
-  const [prefix, domain] = baseEmail.split("@");
-  const email = `chpass${prefix}_${todaysDateAndTime}@${domain}`;
+  const email = helperBase.getEmailWithTodaysDateAndTime(newUser.email);
   const loginName = `ChPass${newUser.loginName}${todaysDateAndTime}`;
 
   await pm
@@ -152,9 +148,7 @@ test("user can edit account details", async ({ page, helperBase }) => {
   const todaysDateAndTime = helperBase.getTodaysDateWithCurrentTime();
 
   const lastName = `${newUser.lastName}-${todaysDateAndTime}`;
-  const baseEmail = newUser.email;
-  const [prefix, domain] = baseEmail.split("@");
-  const email = `editdetails${prefix}_${todaysDateAndTime}@${domain}`;
+  const email = helperBase.getEmailWithTodaysDateAndTime(newUser.email);
   const loginName = `EditDet${newUser.loginName}${todaysDateAndTime}`;
 
   await pm
@@ -244,9 +238,7 @@ test("buy 2 t-shirts as a new user with a standard shipping", async ({
   const todaysDateAndTime = helperBase.getTodaysDateWithCurrentTime();
 
   const lastName = `${newUser.lastName}-${todaysDateAndTime}`;
-  const baseEmail = newUser.email;
-  const [prefix, domain] = baseEmail.split("@");
-  const email = `${prefix}_${todaysDateAndTime}@${domain}`;
+  const email = helperBase.getEmailWithTodaysDateAndTime(newUser.email);
   const loginName = `${newUser.loginName}${todaysDateAndTime}`;
 
   await pm

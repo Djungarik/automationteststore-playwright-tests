@@ -52,9 +52,7 @@ test("buy the 1st featured product as a guest user with a standard shipping from
 
   const firstName = guestUser.firstName;
   const lastName = `${guestUser.lastName}-${todaysDateAndTime}`;
-  const baseEmail = guestUser.email;
-  const [prefix, domain] = baseEmail.split("@");
-  const email = `${prefix}_${todaysDateAndTime}@${domain}`;
+  const email = helperBase.getEmailWithTodaysDateAndTime(guestUser.email);
   const address1 = guestUser.address1;
   const city = guestUser.city;
   const zone = guestUser.zone;
