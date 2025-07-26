@@ -1,6 +1,7 @@
 import { test, expect } from "../fixtures";
 import { PageManager } from "../page-objects/PageManager";
 import guestUser from "../test-data/guest-user.json";
+import footerLinksContent from "../test-data/footer-links-content.json";
 
 test("buy the 1st featured product as a guest user with a standard shipping from the home page", async ({
   page,
@@ -101,5 +102,40 @@ test("buy the 1st featured product as a guest user with a standard shipping from
 
   expect(await pm.onOrderConfirmationPage().getConfirmationMessage()).toContain(
     "Your Order Has Been Processed!"
+  );
+});
+
+test("verify the footer links' content", async ({ page }) => {
+  const pm = new PageManager(page);
+
+  await pm.navigateTo().aboutUs();
+  await expect(page.locator(".content")).toHaveText(footerLinksContent.aboutUs);
+
+  await pm.navigateTo().privacyPolicy();
+  const actualText = await page.locator(".content").innerText();
+  expect(actualText.replace(/\s+/g, " ").trim()).toBe(
+    footerLinksContent.privacyPolicy
+  );
+
+  await pm.navigateTo().returnPolicy();
+  await expect(page.locator(".content")).toHaveText(
+    footerLinksContent.returnPolicy
+  );
+
+  await pm.navigateTo().shipping();
+  await expect(page.locator(".content")).toHaveText(
+    footerLinksContent.shipping
+  );
+
+  await pm.navigateTo().contactUs();
+  const actualAddressText = await page.locator("address").innerText();
+  const actualPhoneText = await page
+    .locator(".col-md-6.pull-right")
+    .innerText();
+  expect(actualAddressText.replace(/\s+/g, " ").trim()).toBe(
+    footerLinksContent.contactUs.address
+  );
+  expect(actualPhoneText.replace(/\s+/g, " ").trim()).toBe(
+    footerLinksContent.contactUs.phone
   );
 });
