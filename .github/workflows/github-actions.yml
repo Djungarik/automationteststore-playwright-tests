@@ -35,10 +35,6 @@ jobs:
 
       - name: Run Playwright tests with Allure reporter
         run: npx playwright test --reporter=line,allure-playwright
-      - name: list allure-results
-        run: |
-          echo "Contents of allure-results:"
-          ls -R allure-results || echo "❌ No allure-results generated!"
 
       - name: Load test report history
         uses: actions/checkout@v4
@@ -54,9 +50,13 @@ jobs:
         if: always()
         continue-on-error: true
         with:
-          gh_pages: gh-pages
           allure_history: allure-history
           allure_results: allure-results
+
+      - name: list allure-history
+        run: |
+          echo "Contents of allure-history after report generation:"
+          ls -R allure-history || echo "❌ No allure-history generated!"
 
       - name: Publish test report
         uses: peaceiris/actions-gh-pages@v3
