@@ -18,7 +18,10 @@ test("register a new user", async ({ page, helperBase }) => {
   const todaysDateAndTime = helperBase.getTodaysDateWithCurrentTime();
 
   const lastName = `${newUser.lastName}-${todaysDateAndTime}`;
-  const email = helperBase.getEmailWithTodaysDateAndTime(newUser.email);
+  const email = helperBase.getEmailWithTodaysDateAndTime(
+    newUser.email,
+    "nureg"
+  );
   const loginName = `New${newUser.loginName}${todaysDateAndTime}`;
 
   await pm
@@ -82,7 +85,10 @@ test("user can change the password", async ({ page, helperBase }) => {
   const todaysDateAndTime = helperBase.getTodaysDateWithCurrentTime();
 
   const lastName = `${newUser.lastName}-${todaysDateAndTime}`;
-  const email = helperBase.getEmailWithTodaysDateAndTime(newUser.email);
+  const email = helperBase.getEmailWithTodaysDateAndTime(
+    newUser.email,
+    "nuchpass"
+  );
   const loginName = `ChPass${newUser.loginName}${todaysDateAndTime}`;
 
   await pm
@@ -148,7 +154,10 @@ test("user can edit account details", async ({ page, helperBase }) => {
   const todaysDateAndTime = helperBase.getTodaysDateWithCurrentTime();
 
   const lastName = `${newUser.lastName}-${todaysDateAndTime}`;
-  const email = helperBase.getEmailWithTodaysDateAndTime(newUser.email);
+  const email = helperBase.getEmailWithTodaysDateAndTime(
+    newUser.email,
+    "nueditaccdet"
+  );
   const loginName = `EditDet${newUser.loginName}${todaysDateAndTime}`;
 
   await pm
@@ -238,7 +247,10 @@ test("buy 2 t-shirts as a new user with a standard shipping", async ({
   const todaysDateAndTime = helperBase.getTodaysDateWithCurrentTime();
 
   const lastName = `${newUser.lastName}-${todaysDateAndTime}`;
-  const email = helperBase.getEmailWithTodaysDateAndTime(newUser.email);
+  const email = helperBase.getEmailWithTodaysDateAndTime(
+    newUser.email,
+    "nubuy2ts"
+  );
   const loginName = `${newUser.loginName}${todaysDateAndTime}`;
 
   await pm
