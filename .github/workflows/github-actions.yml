@@ -53,10 +53,17 @@ jobs:
           allure_history: allure-history
           allure_results: allure-results
 
-      - name: list allure-history
+      - name: Create gh-pages branch if missing
         run: |
-          echo "Contents of allure-history after report generation:"
-          ls -R allure-history || echo "❌ No allure-history generated!"
+          if ! git ls-remote --exit-code --heads origin gh-pages; then
+            echo "Creating gh-pages branch..."
+            git checkout --orphan gh-pages
+            git reset --hard
+            git commit --allow-empty -m "Initial gh-pages commit"
+            git push origin gh-pages
+          else
+            echo "gh-pages branch already exists"
+          fi
 
       - name: Publish test report
         uses: peaceiris/actions-gh-pages@v3
