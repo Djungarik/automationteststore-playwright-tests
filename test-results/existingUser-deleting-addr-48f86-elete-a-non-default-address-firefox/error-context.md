@@ -1,0 +1,774 @@
+# Page snapshot
+
+```yaml
+- banner:
+  - navigation:
+    - link "Automation Test Store":
+      - /url: https://automationteststore.com/
+      - img "Automation Test Store"
+    - list:
+      - listitem:
+        - link "Welcome back Test FN":
+          - /url: https://automationteststore.com/index.php?rt=account/account
+    - text: Main Menu
+    - list:
+      - listitem:
+        - link " Specials":
+          - /url: https://automationteststore.com/index.php?rt=product/special
+      - listitem:
+        - link " Account":
+          - /url: https://automationteststore.com/index.php?rt=account/account
+      - listitem:
+        - link " Cart":
+          - /url: https://automationteststore.com/index.php?rt=checkout/cart
+      - listitem:
+        - link " Checkout":
+          - /url: https://automationteststore.com/index.php?rt=checkout/shipping
+    - textbox "Search Keywords"
+    - text: 
+  - list:
+    - listitem: $ US Dollar
+  - list:
+    - listitem:
+      - link " 1 Items - $31.50":
+        - /url: https://automationteststore.com/index.php?rt=checkout/cart
+  - link "Facebook":
+    - /url: http://www.facebook.com
+  - link "Twitter":
+    - /url: https://twitter.com/
+  - link "Linkedin":
+    - /url: https://uk.linkedin.com/
+- navigation:
+  - list:
+    - listitem:
+      - link "Home":
+        - /url: https://automationteststore.com/
+    - listitem:
+      - link "Apparel & accessories":
+        - /url: https://automationteststore.com/index.php?rt=product/category&path=68
+    - listitem:
+      - link "Makeup":
+        - /url: https://automationteststore.com/index.php?rt=product/category&path=36
+    - listitem:
+      - link "Skincare":
+        - /url: https://automationteststore.com/index.php?rt=product/category&path=43
+    - listitem:
+      - link "Fragrance":
+        - /url: https://automationteststore.com/index.php?rt=product/category&path=49
+    - listitem:
+      - link "Men":
+        - /url: https://automationteststore.com/index.php?rt=product/category&path=58
+    - listitem:
+      - link "Hair Care":
+        - /url: https://automationteststore.com/index.php?rt=product/category&path=52
+    - listitem:
+      - link "Books":
+        - /url: https://automationteststore.com/index.php?rt=product/category&path=65
+- list:
+  - listitem:
+    - link " Home":
+      - /url: https://automationteststore.com/
+  - listitem:
+    - text: 
+    - link "Account":
+      - /url: https://automationteststore.com/index.php?rt=account/account
+  - listitem:
+    - text: 
+    - link "Address Book":
+      - /url: https://automationteststore.com/index.php?rt=account/address
+- heading " Address Book" [level=1]
+- button "×"
+- text: Your address has been successfully inserted
+- heading "Address Book Entries" [level=4]
+- table:
+  - rowgroup:
+    - row "New UpdDefaultAddress-2025720144130 QA 123 Main St N300 QAcity 1234 Aberdeen United Kingdom  Edit  Delete":
+      - cell "New UpdDefaultAddress-2025720144130 QA 123 Main St N300 QAcity 1234 Aberdeen United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New UpdateAddress-2025720144110 QA 123 Main St N300 QAcity 1234 Aberdeen United Kingdom  Edit  Delete":
+      - cell "New UpdateAddress-2025720144110 QA 123 Main St N300 QAcity 1234 Aberdeen United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New UpdateAddress-2025720133849 QA 123 Main St N300 QAcity 1234 Aberdeen United Kingdom  Edit  Delete":
+      - cell "New UpdateAddress-2025720133849 QA 123 Main St N300 QAcity 1234 Aberdeen United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New UpdDefaultAddress-2025720133028 QA 123 Main St N300 QAcity 1234 Aberdeen United Kingdom  Edit  Delete":
+      - cell "New UpdDefaultAddress-2025720133028 QA 123 Main St N300 QAcity 1234 Aberdeen United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New UpdateAddress-2025720133013 QA 123 Main St N300 QAcity 1234 Aberdeen United Kingdom  Edit  Delete":
+      - cell "New UpdateAddress-2025720133013 QA 123 Main St N300 QAcity 1234 Aberdeen United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New UpdDefaultAddress-2025720104611 QA 123 Main St N300 QAcity 1234 Aberdeen United Kingdom  Edit  Delete":
+      - cell "New UpdDefaultAddress-2025720104611 QA 123 Main St N300 QAcity 1234 Aberdeen United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New UpdateAddress-2025720104544 QA 123 Main St N300 QAcity 1234 Aberdeen United Kingdom  Edit  Delete":
+      - cell "New UpdateAddress-2025720104544 QA 123 Main St N300 QAcity 1234 Aberdeen United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New UpdDefaultAddress-2025720133908 QA 123 Main St N300 QAcity 1234 Aberdeen United Kingdom  Edit  Delete":
+      - cell "New UpdDefaultAddress-2025720133908 QA 123 Main St N300 QAcity 1234 Aberdeen United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New UpdateAddress-2025720145225 QA 123 Main St N300 QAcity 1234 Aberdeen United Kingdom  Edit  Delete":
+      - cell "New UpdateAddress-2025720145225 QA 123 Main St N300 QAcity 1234 Aberdeen United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New UpdDefaultAddress-2025720145239 QA 123 Main St N300 QAcity 1234 Aberdeen United Kingdom  Edit  Delete":
+      - cell "New UpdDefaultAddress-2025720145239 QA 123 Main St N300 QAcity 1234 Aberdeen United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New UpdateAddress-2025720150530 QA 123 Main St N300 QAcity 1234 Aberdeen United Kingdom  Edit  Delete":
+      - cell "New UpdateAddress-2025720150530 QA 123 Main St N300 QAcity 1234 Aberdeen United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New UpdDefaultAddress-2025720150541 QA 123 Main St N300 QAcity 1234 Aberdeen United Kingdom  Edit  Delete":
+      - cell "New UpdDefaultAddress-2025720150541 QA 123 Main St N300 QAcity 1234 Aberdeen United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New EDAddress-2025720144130 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New EDAddress-2025720144130 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New DDAddress-2025720144147 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New DDAddress-2025720144147 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New ADAddress-2025720144121 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New ADAddress-2025720144121 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New ENDAddress-2025720144110 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New ENDAddress-2025720144110 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New ANDAddress-2025720144113 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New ANDAddress-2025720144113 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New DDAddress-2025720104636 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New DDAddress-2025720104636 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New EDAddress-2025720104611 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New EDAddress-2025720104611 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New EDAddress-2025720104625 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New EDAddress-2025720104625 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New ANDAddress-2025720104559 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New ANDAddress-2025720104559 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New ENDAddress-2025720104554 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New ENDAddress-2025720104554 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New ENDAddress-2025720104527 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New ENDAddress-2025720104527 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New ADAddress-2025720104530 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New ADAddress-2025720104530 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New ENDAddress-2025720104544 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New ENDAddress-2025720104544 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New ANDAddress-2025720133853 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New ANDAddress-2025720133853 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New ENDAddress-2025720133849 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New ENDAddress-2025720133849 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New DDAddress-2025720133039 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New DDAddress-2025720133039 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New DNDAddress-2025720133038 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New DNDAddress-2025720133038 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New ANDAddress-2025720145222 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New ANDAddress-2025720145222 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New ADAddress-2025720145229 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New ADAddress-2025720145229 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New DDAddress-2025720145300 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New DDAddress-2025720145300 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New ANDAddress-2025720150520 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New ANDAddress-2025720150520 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New ADAddress-2025720150525 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New ADAddress-2025720150525 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New DDAddress-2025720150600 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New DDAddress-2025720150600 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New ENDAddress-2025725150648 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New ENDAddress-2025725150648 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New ADAddress-2025725150650 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New ADAddress-2025725150650 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New ANDAddress-2025725150700 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New ANDAddress-2025725150700 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New UpdDefaultAddress-2025725150715 QA 123 Main St N300 QAcity 1234 Berkshire United Kingdom  Edit  Delete":
+      - cell "New UpdDefaultAddress-2025725150715 QA 123 Main St N300 QAcity 1234 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New DNDAddress-2025725150731 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New DNDAddress-2025725150731 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New DDAddress-2025725150733 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New DDAddress-2025725150733 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New ANDAddress-2025725165808 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New ANDAddress-2025725165808 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New DDAddress-2025725165826 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New DDAddress-2025725165826 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New ADAddress-2025725165814 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New ADAddress-2025725165814 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New ADAddress-2025725170054 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New ADAddress-2025725170054 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New ANDAddress-2025725170055 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New ANDAddress-2025725170055 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New DDAddress-2025725170113 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New DDAddress-2025725170113 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New DNDAddress-2025725140547 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New DNDAddress-2025725140547 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New ADAddress-2025725140549 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New ADAddress-2025725140549 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New ADAddress-2025725140606 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New ADAddress-2025725140606 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New DDAddress-2025725140635 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New DDAddress-2025725140635 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New ANDAddress-2025725140620 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New ANDAddress-2025725140620 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New ADAddress-2025726140039 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New ADAddress-2025726140039 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New ANDAddress-2025726140107 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New ANDAddress-2025726140107 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New DDAddress-2025726140116 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New DDAddress-2025726140116 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New ANDAddress-2025727110526 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New ANDAddress-2025727110526 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New DDAddress-2025727110547 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New DDAddress-2025727110547 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New ADAddress-2025727112104 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New ADAddress-2025727112104 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New ANDAddress-2025727112114 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New ANDAddress-2025727112114 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New DDAddress-2025727112128 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New DDAddress-2025727112128 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New ANDAddress-2025727112834 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New ANDAddress-2025727112834 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New DDAddress-2025727112856 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New DDAddress-2025727112856 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New ADAddress-2025727112843 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New ADAddress-2025727112843 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New DDAddress-2025727114236 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New DDAddress-2025727114236 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New ADAddress-2025727120251 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New ADAddress-2025727120251 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New DDAddress-2025727120315 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New DDAddress-2025727120315 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New ANDAddress-2025727120302 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New ANDAddress-2025727120302 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New ANDAddress-2025727091449 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New ANDAddress-2025727091449 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New ADAddress-2025727091452 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New ADAddress-2025727091452 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New DDAddress-2025727091459 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New DDAddress-2025727091459 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New DDAddress-2025727093248 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New DDAddress-2025727093248 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New ADAddress-2025727093234 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New ADAddress-2025727093234 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New ANDAddress-2025727093235 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New ANDAddress-2025727093235 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New ADAddress-2025727094605 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New ADAddress-2025727094605 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New ANDAddress-2025727094605 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New ANDAddress-2025727094605 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New DDAddress-2025727094644 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New DDAddress-2025727094644 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New ADAddress-2025727103356 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New ADAddress-2025727103356 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New DDAddress-2025727103408 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New DDAddress-2025727103408 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New ANDAddress-2025727103427 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New ANDAddress-2025727103427 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New ANDAddress-2025727105319 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New ANDAddress-2025727105319 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New ADAddress-2025727105350 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New ADAddress-2025727105350 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New DDAddress-2025727105400 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit":
+      - cell "New DDAddress-2025727105400 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit":
+        - button " Edit"
+- table:
+  - rowgroup:
+    - row "New ANDAddress-2025727140322 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New ANDAddress-2025727140322 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- table:
+  - rowgroup:
+    - row "New DNDAddress-2025727140331 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom  Edit  Delete":
+      - cell "New DNDAddress-2025727140331 QA 321 Side St N200 Automationcity 54321 Berkshire United Kingdom"
+      - cell " Edit  Delete":
+        - button " Edit"
+        - button " Delete"
+- link " Back":
+  - /url: https://automationteststore.com/index.php?rt=account/account
+- link " New Address":
+  - /url: https://automationteststore.com/index.php?rt=account/address/insert
+- heading "My Account" [level=2]
+- list:
+  - listitem:
+    - link " Account Dashboard":
+      - /url: https://automationteststore.com/index.php?rt=account/account
+  - listitem:
+    - link " My wish list":
+      - /url: https://automationteststore.com/index.php?rt=account/wishlist
+  - listitem:
+    - link " Edit account details":
+      - /url: https://automationteststore.com/index.php?rt=account/edit
+  - listitem:
+    - link " Change password":
+      - /url: https://automationteststore.com/index.php?rt=account/password
+  - listitem:
+    - link " Manage Address Book":
+      - /url: https://automationteststore.com/index.php?rt=account/address
+  - listitem:
+    - link " Order history":
+      - /url: https://automationteststore.com/index.php?rt=account/history
+  - listitem:
+    - link " Transaction history":
+      - /url: https://automationteststore.com/index.php?rt=account/transactions
+  - listitem:
+    - link " Downloads":
+      - /url: https://automationteststore.com/index.php?rt=account/download
+  - listitem:
+    - link " Notifications":
+      - /url: https://automationteststore.com/index.php?rt=account/notification
+  - listitem:
+    - link " Logoff":
+      - /url: https://automationteststore.com/index.php?rt=account/logout
+- contentinfo:
+  - heading "About Us" [level=2]
+  - paragraph: This store has been created to enable students to practice their automation testing skills. This is not a real store, no orders are actually placed or payments taken. This store is to be used for educational purposes only.
+  - heading "Contact Us" [level=2]
+  - list:
+    - listitem:  +123 456 7890
+    - listitem:  admin@automationteststore.com
+  - heading "Testimonials" [level=2]
+  - list:
+    - listitem: "\"Regular customer and products at great prices. Thanks again.\" By : Mrs Baker on trustedmegareviews.org"
+    - listitem: "\"Really great products and professional service!\" By : Megan Witmore"
+    - listitem: "\"I found this store to be very reasonably priced and the service was superb. Highly recommended \" By : Jason Sturidge"
+    - listitem: "\"Returns were easy and my replacement item arrived very quickly. Really great service. Thanks and will be buying again.\" By : Kirsty Williams"
+    - listitem: "\"Regular customer and products at great prices. Thanks again.\" By : Mrs Baker on trustedmegareviews.org"
+    - listitem: "\"Really great products and professional service!\" By : Megan Witmore"
+  - list:
+    - listitem: "1"
+    - listitem: "2"
+    - listitem: "3"
+    - listitem: "4"
+  - heading "Newsletter Signup" [level=2]
+  - text:  Sign up to Our Newsletter & get attractive Offers by subscribing to our newsletters.
+  - textbox "Subscribe to Newsletter"
+  - button "Subscribe"
+  - list:
+    - listitem:
+      - link "About Us":
+        - /url: https://automationteststore.com/index.php?rt=content/content&content_id=1
+    - listitem:
+      - link "Privacy Policy":
+        - /url: https://automationteststore.com/index.php?rt=content/content&content_id=2
+    - listitem:
+      - link "Return Policy":
+        - /url: https://automationteststore.com/index.php?rt=content/content&content_id=3
+    - listitem:
+      - link "Shipping":
+        - /url: https://automationteststore.com/index.php?rt=content/content&content_id=4
+    - listitem:
+      - link "Contact Us":
+        - /url: https://automationteststore.com/index.php?rt=content/contact
+    - listitem:
+      - link "Site Map":
+        - /url: https://automationteststore.com/index.php?rt=content/sitemap
+    - listitem:
+      - link "Logoff":
+        - /url: https://automationteststore.com/index.php?rt=account/logout
+    - listitem:
+      - link "Account":
+        - /url: https://automationteststore.com/index.php?rt=account/account
+    - listitem:
+      - link "Basket":
+        - /url: https://automationteststore.com/index.php?rt=checkout/cart
+  - link "Facebook":
+    - /url: http://www.facebook.com
+  - link "Twitter":
+    - /url: https://twitter.com/
+  - link "Linkedin":
+    - /url: https://uk.linkedin.com/
+  - img "payments"
+  - text: Powered By
+  - link "AbanteCart":
+    - /url: http://www.abantecart.com
+  - text: Automation Test Store © 2025
+  - link "Support AbanteCart eCommerce":
+    - /url: http://www.abantecart.com/contribute-to-abantecart
+    - img "Support AbanteCart eCommerce"
+  - link "Back to top":
+    - /url: "#"
+```
