@@ -1,44 +1,57 @@
 name: Playwright Tests
+
 on:
   push:
     branches: [main, master]
   pull_request:
     branches: [main, master]
+
 jobs:
   test:
-    timeout-minutes: 60
     runs-on: ubuntu-latest
+    timeout-minutes: 60
+
     env:
       TEST_USER_JSON: ${{ secrets.TEST_USER_JSON }}
+
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+
       - name: Install dependencies
         run: npm ci --force
+
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps --force
+
       - name: Ensure test-data directory exists
         run: mkdir -p test-data
+
       - name: Create test-user.json from secret
         run: echo "$TEST_USER_JSON" > test-data/test-user.json
-      - name: Run Playwright tests
-        run: npx playwright test
+
+      - name: Run Playwright tests with Allure reporter
+        run: npx playwright test --reporter=line,allure-playwright
+
       - name: Load test report history
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         if: always()
-        continue-on-error: true
         with:
           ref: gh-pages
           path: gh-pages
-      - name: Build test report
+          fetch-depth: 0
+
+      - name: Generate Allure Report
         uses: simple-elf/allure-report-action@v1.7
         if: always()
         with:
           gh_pages: gh-pages
           allure_history: allure-history
-          allure_results: build/allure-results
+          allure_results: allure-results
+
       - name: Publish test report
         uses: peaceiris/actions-gh-pages@v3
         if: always()
